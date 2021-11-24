@@ -15,7 +15,7 @@ const AddItem = ({
   inputError,
 }) => {
   return (
-    <React.Fragment>
+    <>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Agregar Cancion"
@@ -31,7 +31,7 @@ const AddItem = ({
         />
       </View>
       <Text style={styles.inputError}>{inputError}</Text>
-    </React.Fragment>
+    </>
   );
 }
 

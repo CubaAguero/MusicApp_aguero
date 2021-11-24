@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 
 import AddItem from '../components/AddItem';
+import List from '../components/List/Index'
 import Modal from '../components/Modal';
+import color from "../constants/colors";
 
-export default function Fav({ List }) {
+export default function Fav() {
     const [inputText, setInputText] = useState('');
     const [inputError, setInputError] = useState('');
-    const [itemList, setItemList] = useState();
-    console.log(List, 'list')
+    const [itemList, setItemList] = useState([]);
+  
     const [itemSelected, setItemSelected] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
-
-    useEffect(()=>{
-      setItemList(...itemList, List)
-    },[])
 
     const handleChangeText = (text) => {
       setInputText(text);
@@ -50,7 +49,7 @@ export default function Fav({ List }) {
   
    
     return (
-        <>
+        <View style={styles.screen}>
             <AddItem 
                 handleChangeText={handleChangeText}
                 handleAddItem={handleAddItem}
@@ -67,7 +66,14 @@ export default function Fav({ List }) {
                 handleConfirmDelete={handleConfirmDelete}
                 itemSelected={itemSelected}
             />
-        </>
+        </View>
 
     )
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: color.bg,
+    flex: 1
+  }
+})
