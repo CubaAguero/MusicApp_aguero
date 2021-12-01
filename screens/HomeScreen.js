@@ -3,20 +3,21 @@ import React from "react";
 import { 
     View, 
     StyleSheet,
-    Text,
-    Button
 } from 'react-native';
+import Card from "../components/Card";
 import color from '../constants/colors';
-import Fav from "./Fav";
+
+const data =  {
+    id: '1',
+    imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
+    title: 'High on You',
+    artist: 'Helen',
+}
 
 export default function Inicio({ navigation, route }) {
     return(
         <View style={styles.screen}>
-            <Button 
-                title='Ir a Favoritos'
-                onPress={() => navigation.navigate('Favoritos')}
-                color={color.buttonColor}
-            />
+            <Card data={data}/>
 
             <StatusBar style="auto" />
         </View>
@@ -27,12 +28,7 @@ const styles = StyleSheet.create({
     screen: {
         backgroundColor: color.bg,
         flex: 1,
-        alignItems: 'center',
-        justifyContent:'center'
+        paddingTop: 20
     },
-    Btn: {
-        color: color.buttonColor
-    }
-    
     
 })

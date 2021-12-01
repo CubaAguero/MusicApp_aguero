@@ -4,9 +4,9 @@ import { Ionicons } from '@expo/vector-icons';
 
 import color from '../../constants/colors'
 import Buscar from  '../../screens/Buscar';
-import Biblioteca from '../../screens/Biblioteca';
 import Premiun from '../../screens/Premiun';
 import { HomeNavigation } from './HomeNavigation';
+import { LibraryNavigation } from './LibraryNavigation'
 
 const Tabs = createBottomTabNavigator();
 
@@ -39,7 +39,7 @@ export const AppNavigation = () => (
     >
         <Tabs.Screen name='Inicio' component={HomeNavigation} />
         <Tabs.Screen name='Buscar' component={Buscar} />
-        <Tabs.Screen name='Biblioteca' component={Biblioteca} />
+        <Tabs.Screen name='Biblioteca' component={LibraryNavigation} />
         <Tabs.Screen name='Premiun' component={Premiun} />
     </Tabs.Navigator>
 )

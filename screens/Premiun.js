@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
 import colors from "../constants/colors";
@@ -6,6 +7,7 @@ export default function Premiun() {
     return(
         <View style={styles.screen}>
             <Text style={styles.text}>Premiun</Text>
+            <StatusBar style='auto' />
         </View>
     )
 }
